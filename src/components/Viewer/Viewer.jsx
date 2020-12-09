@@ -1,13 +1,39 @@
 import React from 'react';
 import uuid from 'react-uuid';
+import PropTypes from 'prop-types';
 import './Viewer.css';
 
+/**
+ * Viewer renders data array as a table. Pass an array of data with toView array of
+ * objects. Custom styles and className are also supported. Default styles can be
+ * overriden either using tableStyles prop or className prop.
+ *
+ * @component
+ * @example
+ *
+ * const toView = [{value: "Name", key: "name"}, {value: "Age", key: "age"}]
+ * const data = [{name: 'Ali', age: 22}]
+ * const tableStyle = {}
+ * const className = "people-viewer"
+ * const widths = [40, 60]
+ *
+ * return (
+ *  <Viewer
+ *   toView = {toView}
+ *   data = {data}
+ *   tableStyle = {tableStyle}
+ *   className = {className}
+ *   width = {widths}
+ *  />
+ * )
+ */
+
 function Viewer({
-  toView = [],
-  data = [],
-  tableStyle = {},
-  widths = [],
-  className = '',
+  toView,
+  data,
+  tableStyle,
+  className,
+  widths,
 }) {
   return (
     <table className={`table ${className}`} style={tableStyle}>
@@ -37,5 +63,24 @@ function Viewer({
     </table>
   );
 }
+
+Viewer.propTypes = {
+  toView: PropTypes.arrayOf(PropTypes.shape({
+    value: PropTypes.string,
+    key: PropTypes.string,
+  })),
+  data: PropTypes.arrayOf(PropTypes.shape(PropTypes.any)),
+  tableStyle: PropTypes.shape(PropTypes.any),
+  className: PropTypes.string,
+  widths: PropTypes.arrayOf(PropTypes.number),
+};
+
+Viewer.defaultProps = {
+  toView: [],
+  data: [],
+  tableStyle: {},
+  className: '',
+  widths: [],
+};
 
 export default Viewer;

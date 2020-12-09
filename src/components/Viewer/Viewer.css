@@ -13,15 +13,14 @@
 }
 
 .table th {
-    text-align: left;
     border-bottom: 2px solid var(--light-grey);
 }
 
 .table td:first-child, .table th:first-child {
     border-left: 1px solid var(--light-grey);
-    padding-left: 30px;
+    padding-left: 60px;
 }
 .table td:last-child, .table th:last-child {
     border-right: 1px solid var(--light-grey);
-    padding-right: 30px;
+    padding-right: 60px;
 }

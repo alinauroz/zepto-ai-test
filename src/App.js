@@ -15,6 +15,7 @@ function App() {
       <br />
       <br />
       <Viewer
+        className="people-viewer"
         toView={[
           { value: 'Client', key: 'client' },
           { value: 'Matter', key: 'matter' },
@@ -23,6 +24,7 @@ function App() {
           { value: 'Time', key: 'time' },
         ]}
         data={isLoading ? [] : response.data.people}
+        widths={[13, 13, 48, 13, 13]}
       />
     </div>
   );

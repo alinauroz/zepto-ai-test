@@ -6,12 +6,21 @@ function Viewer({
   toView = [],
   data = [],
   tableStyle = {},
+  widths = [],
+  className = '',
 }) {
   return (
-    <table className="table" style={tableStyle}>
+    <table className={`table ${className}`} style={tableStyle}>
       <thead>
         {
-            toView.map((heading) => <th key={uuid()}>{heading.value}</th>)
+            toView.map((heading, index) => (
+              <th
+                style={widths[index] ? { width: `${widths[index]}%` } : {}}
+                key={uuid()}
+              >
+                {heading.value}
+              </th>
+            ))
         }
       </thead>
       <tbody>

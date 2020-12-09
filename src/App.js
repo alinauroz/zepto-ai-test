@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   return (
     <>
-      Zepto AI Test
+      Zepto Ai Test
     </>
   );
 }

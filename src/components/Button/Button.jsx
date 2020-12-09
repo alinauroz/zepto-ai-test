@@ -12,7 +12,7 @@ function Button({
     <button
       type="button"
       onClick={onClick || null}
-      className={className}
+      className={`button ${className}`}
       style={style}
       disabled={disabled}
     >

@@ -1,6 +1,6 @@
 export const apis = Object.freeze({
-  dev: '',
-  prod: '',
+  dev: 'https://7cg8uz8p69.execute-api.us-east-1.amazonaws.com/',
+  prod: 'https://7cg8uz8p69.execute-api.us-east-1.amazonaws.com/',
 });
 
 /**

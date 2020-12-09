@@ -5,7 +5,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> Global</title>
+  <title> Button</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -77,8 +77,8 @@
         <div class="core" id="main-content-wrapper">
             <div class="content">
                 <header class="page-title">
-                    <p>Title</p>
-                    <h1>Global</h1>
+                    <p>Components</p>
+                    <h1>Button</h1>
                 </header>
                 
 
@@ -89,7 +89,9 @@
 
 <header>
     
-        <h2></h2>
+        <h2>
+            &ltButton <i>onClick</i> <i>className</i> <i>style</i> <i>disabled</i> <i>value</i> /&gt
+        </h2>
         
     
 </header>
@@ -98,159 +100,22 @@
     <div class="container-overview">
     
         
-
-        
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-        
-    
-    </div>
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class='vertical-section'>
-            <h1>Members</h1>
-            <div class="members">
-            
-                <div class="member">
-
-<h4 class="name" id="api">
-    <a class="href-link" href="#api">#</a>
-    
-        
-            <span class='tag'>constant</span>
-        
-    
-    <span class="code-name">
-        api
-    </span>
-    
-</h4>
-
-
-
-
-<div class="description">
-    <p>production mode can be tested by visiting 127.0.0.1 instead of
-localhost</p>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="res_api.js.html" class="button">View Source</a>
-            <span>
-                <a href="res_api.js.html">res/api.js</a>, <a href="res_api.js.html#line11">line 11</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-</div>
-            
-            </div>
-        </div>
-    
-
-    
-        <div class='vertical-section'>
-            <h1>Methods</h1>
-            <div class="members">
-            
-                <div class="member">
+            <div class='vertical-section'>
+                <div class="members">
+                    <div class="member">
+                        <div class=name>
+                            <span class="tag">Constructor</span>
+                        </div>
+                        
 
 
     
-    <h4 class="name" id="toQueryStr">
-        <a class="href-link" href="#toQueryStr">#</a>
+    <h4 class="name" id="Button">
+        <a class="href-link" href="#Button">#</a>
         
         <span class="code-name">
             
-                toQueryStr<span class="signature">(queryObject)</span><span class="type-signature"> &rarr; {String}</span>
+                &ltButton <i>onClick</i> <i>className</i> <i>style</i> <i>disabled</i> <i>value</i> /&gt
             
         </span>
     </h4>
@@ -259,7 +124,8 @@ localhost</p>
     
     
     <div class="description">
-        <p>takes a query object and returns query string</p>
+        <p>Button component renders a button. Default styles can be overridden using className and
+style props.</p>
     </div>
     
 
@@ -269,58 +135,84 @@ localhost</p>
 
 
 
-
-
-    <h5>Parameters:</h5>
     
+        <h5>PropTypes:</h5>
+        
 <div class="table-container">
-    <table class="params table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
+  <table class="params table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Description</th>
+        <th class="last">Default</th>
+    </tr>
+    </thead>
 
-            <th>Type</th>
-
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-
-            
-<tr class="deep-level-0">
-  
-      <td class="name"><code>queryObject</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Object</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-        
-        </tbody>
-    </table>
+    <tbody>
+    
+          <tr class="deep-level-0">
+            <td class="name"><code>onClick</code></td>
+            <td>
+              func
+            </td>
+            <td>No</td>
+            <td></td>
+            <td>null</td>
+          </tr>
+          
+    
+          <tr class="deep-level-0">
+            <td class="name"><code>className</code></td>
+            <td>
+              string
+            </td>
+            <td>No</td>
+            <td></td>
+            <td>''</td>
+          </tr>
+          
+    
+          <tr class="deep-level-0">
+            <td class="name"><code>style</code></td>
+            <td>
+              shape
+            </td>
+            <td>No</td>
+            <td></td>
+            <td>{}</td>
+          </tr>
+          
+    
+          <tr class="deep-level-0">
+            <td class="name"><code>disabled</code></td>
+            <td>
+              bool
+            </td>
+            <td>No</td>
+            <td></td>
+            <td>false</td>
+          </tr>
+          
+    
+          <tr class="deep-level-0">
+            <td class="name"><code>value</code></td>
+            <td>
+              string
+            </td>
+            <td>No</td>
+            <td></td>
+            <td>''</td>
+          </tr>
+          
+    
+    </tbody>
+  </table>
 </div>
+    
+
+
 
 
 
@@ -359,9 +251,9 @@ localhost</p>
 
     
         <p class="tag-source">
-            <a href="utils_toQueryStr.js.html" class="button">View Source</a>
+            <a href="components_Button_Button.jsx.html" class="button">View Source</a>
             <span>
-                <a href="utils_toQueryStr.js.html">utils/toQueryStr.js</a>, <a href="utils_toQueryStr.js.html#line7">line 7</a>
+                <a href="components_Button_Button.jsx.html">components/Button/Button.jsx</a>, <a href="components_Button_Button.jsx.html#line30">line 30</a>
             </span>
         </p>
     
@@ -384,36 +276,49 @@ localhost</p>
 
 
 
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
 
-<div class="columns">
+
+
+    <h5>Example</h5>
     
     
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
         
-<span class="param-type">String</span>
+
+<div id='component0'></div>
+
+<script>
+  ReactDOM.render(ReactWrapper({
+    example: "const value = \"Click Me\"\nconst onClick = () => alert('Hi ..')\nconst style = {}\nconst disbaled = false\nconst className = ''\n\nreturn (\n <Button\n   value = {value}\n   onClick = {onClick}\n   style = {style}\n   disabled = {disbaled}\n   className = {className}\n />\n)",
+    uniqId: "component0",
+  }), document.getElementById('component0'));
+</script>
+    
 
 
+
+                    </div>
+                </div>
+            </div>
+        
+    
     </div>
     
-</div>
+        
+    
+    
 
-                
-        </div>
-    </div>
+    
 
+    
 
+    
 
+    
 
-</div>
-            
-            </div>
-        </div>
+    
+
+    
+
     
 
     

@@ -29,11 +29,11 @@ import './Viewer.css';
  */
 
 function Viewer({
-  toView = [],
-  data = [],
-  tableStyle = {},
-  className = '',
-  widths = [],
+  toView,
+  data,
+  tableStyle,
+  className,
+  widths,
 }) {
   return (
     <table className={`table ${className}`} style={tableStyle}>

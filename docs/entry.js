@@ -22,5 +22,8 @@
 
     import './styles/iframe.css';
 
-  import Component0 from '../src/components/Viewer/Viewer.jsx';
-reactComponents['Viewer'] = Component0;
+  import Component0 from '../src/components/Button/Button.jsx';
+reactComponents['Button'] = Component0;
+
+import Component1 from '../src/components/Viewer/Viewer.jsx';
+reactComponents['Viewer'] = Component1;

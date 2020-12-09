@@ -7,8 +7,6 @@ import useRequest from './hooks/useRequest';
 function App() {
   const { isLoading, response } = useRequest({ route: 'test/people', query: { period: 'day' } });
 
-  console.log(response);
-
   return (
     <div style={{ width: '95%', marginLeft: '2.5%' }}>
       Zepto Ai Test

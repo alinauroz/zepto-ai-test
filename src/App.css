@@ -1,0 +1,16 @@
+.people-viewer td, .people-viewer th {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.people-viewer th {
+    font-weight: 600;
+}
+
+.people-viewer td {
+    font-weight: 400;
+}
+
+.people-viewer td:nth-child(3), .people-viewer th:nth-child(3) {
+    text-align: left;
+}

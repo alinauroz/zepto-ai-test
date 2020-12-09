@@ -1,5 +1,6 @@
 import React from 'react';
 import uuid from 'react-uuid';
+import './Viewer.css';
 
 function Viewer({
   toView = [],

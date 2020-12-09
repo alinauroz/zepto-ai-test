@@ -8,4 +8,4 @@ export const apis = Object.freeze({
  * localhost
  */
 
-export const api = window.location.test(/localhost/) ? apis.dev : apis.prod;
+export const api = /localhost/.test(window.location.href) ? apis.dev : apis.prod;

@@ -37,17 +37,19 @@ function Viewer({
 }) {
   return (
     <table className={`table ${className}`} style={tableStyle}>
-      <thead>
-        {
-            toView.map((heading, index) => (
-              <th
-                style={widths[index] ? { width: `${widths[index]}%` } : {}}
-                key={uuid()}
-              >
-                {heading.value}
-              </th>
-            ))
-        }
+      <thead data-testid="table-heading">
+        <tr>
+          {
+              toView.map((heading, index) => (
+                <th
+                  style={widths[index] ? { width: `${widths[index]}%` } : {}}
+                  key={uuid()}
+                >
+                  {heading.value}
+                </th>
+              ))
+          }
+        </tr>
       </thead>
       <tbody>
         {
@@ -69,8 +71,8 @@ Viewer.propTypes = {
     value: PropTypes.string,
     key: PropTypes.string,
   })),
-  data: PropTypes.arrayOf(PropTypes.shape(PropTypes.any)),
-  tableStyle: PropTypes.shape(PropTypes.any),
+  data: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)),
+  tableStyle: PropTypes.objectOf(PropTypes.any),
   className: PropTypes.string,
   widths: PropTypes.arrayOf(PropTypes.number),
 };

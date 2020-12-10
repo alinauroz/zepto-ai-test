@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should take a snapshot 1`] = `
+<DocumentFragment>
+  <table
+    class="table "
+  >
+    <thead
+      data-testid="table-heading"
+    >
+      <tr>
+        <th>
+          Color
+        </th>
+        <th>
+          Hex Code
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          red
+        </td>
+        <td>
+          #f00
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</DocumentFragment>
+`;

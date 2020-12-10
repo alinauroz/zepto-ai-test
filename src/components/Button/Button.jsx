@@ -51,7 +51,7 @@ function Button({
 Button.propTypes = {
   onClick: PropTypes.func,
   className: PropTypes.string,
-  style: PropTypes.shape(PropTypes.any),
+  style: PropTypes.objectOf(PropTypes.any),
   disabled: PropTypes.bool,
   value: PropTypes.string,
 };

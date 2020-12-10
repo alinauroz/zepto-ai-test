@@ -41,6 +41,7 @@ function Button({
       className={`button ${className}`}
       style={style}
       disabled={disabled}
+      data-testid="app-button"
     >
       {value}
     </button>

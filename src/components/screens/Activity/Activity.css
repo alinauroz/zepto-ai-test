@@ -1,0 +1,6 @@
+.error-message {
+    text-align: center;
+    color: var(--light-grey);
+    font-weight: bold;
+    margin-top: 50px;
+}

@@ -1,5 +1,7 @@
 .loading-title {
     text-align: center;
+    color: var(--text-grey);
+    font-weight: 600;
 }
 
 .loadbar-container {

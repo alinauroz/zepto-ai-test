@@ -1,4 +1,4 @@
-// resources for activity component
+// resources for activity screen
 
 export const toView = [
   { value: 'Client', key: 'client' },

@@ -72,7 +72,7 @@
             
             <nav>
                 
-                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Components</h3><ul><li><a href="Button.html">Button</a></li><li><a href="Viewer.html">Viewer</a></li></ul><h3>Global</h3><ul><li><a href="global.html#api">api</a></li><li><a href="global.html#toQueryStr">toQueryStr</a></li></ul></div>
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Components</h3><ul><li><a href="Button.html">Button</a></li><li><a href="LoadingBar.html">LoadingBar</a></li><li><a href="Viewer.html">Viewer</a></li></ul><h3>Global</h3><ul><li><a href="global.html#api">api</a></li><li><a href="global.html#toQueryStr">toQueryStr</a></li></ul></div>
                 
             </nav>
         </div>
@@ -128,17 +128,19 @@ function Viewer({
 }) {
   return (
     &lt;table className={`table ${className}`} style={tableStyle}>
-      &lt;thead>
-        {
-            toView.map((heading, index) => (
-              &lt;th
-                style={widths[index] ? { width: `${widths[index]}%` } : {}}
-                key={uuid()}
-              >
-                {heading.value}
-              &lt;/th>
-            ))
-        }
+      &lt;thead data-testid="table-heading">
+        &lt;tr>
+          {
+              toView.map((heading, index) => (
+                &lt;th
+                  style={widths[index] ? { width: `${widths[index]}%` } : {}}
+                  key={uuid()}
+                >
+                  {heading.value}
+                &lt;/th>
+              ))
+          }
+        &lt;/tr>
       &lt;/thead>
       &lt;tbody>
         {
@@ -160,8 +162,8 @@ Viewer.propTypes = {
     value: PropTypes.string,
     key: PropTypes.string,
   })),
-  data: PropTypes.arrayOf(PropTypes.shape(PropTypes.any)),
-  tableStyle: PropTypes.shape(PropTypes.any),
+  data: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)),
+  tableStyle: PropTypes.objectOf(PropTypes.any),
   className: PropTypes.string,
   widths: PropTypes.arrayOf(PropTypes.number),
 };

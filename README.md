@@ -21,7 +21,7 @@ Runs the app in development mode.
 Open [http://localhost:3000](http://localhost:3000) to view in the browser.
 
 ### `yarn test`
-Launches the test runner in the interactive watch mode.
+Launches the test runner in the interactive watch mode. Button component has the most tests.
 
 ### `yarn docs`
 Generates the documentation of the app using [JSDoc](https://www.npmjs.com/package/jsdoc). The documentation is available in _docs_ directory.
@@ -44,7 +44,7 @@ contains the app components. Every directory inside this directory contains a js
 
 ### src/hooks
 
-contains custom hook. So far, there is only one hook, _useRequest_. This hook uses _axios_ to send http/https requests. One of the benefits of using hook is below.
+contains custom hooks. So far, there is only one hook, _useRequest_. This hook uses _axios_ to send http/https requests. One of the benefits of using hook is below.
 
 ```
 // without hooks

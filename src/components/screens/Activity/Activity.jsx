@@ -1,41 +1,35 @@
 import React from 'react';
+import uuid from 'react-uuid';
 import Button from '../../Button/Button';
 import Viewer from '../../Viewer/Viewer';
 import useRequest from '../../../hooks/useRequest';
-
-const periods = Object.freeze({
-  day: 'day',
-  week: 'week',
-  month: 'month',
-});
+import {
+  toView, widths, periods, route, viewerClass, values,
+} from '../../../res/Activity';
 
 function Activity() {
   const [period, setPeriod] = React.useState(periods.day);
-  const { isLoading, response } = useRequest({ route: 'test/people', query: { period } });
+  const { isLoading, response } = useRequest({ route, query: { period } });
 
   return (
     <>
-      <Button
-        value="Day"
-        onClick={() => setPeriod(periods.day)}
-        selected={periods.day === period}
-      />
-      <Button
-        value="This Week"
-        onClick={() => setPeriod(periods.week)}
-        selected={periods.week === period}
-      />
+      <div>
+        {
+            Object.keys(periods).map((key) => (
+              <Button
+                value={values[key]}
+                onClick={() => setPeriod(periods[key])}
+                selected={periods[key] === period}
+                key={uuid()}
+              />
+            ))
+        }
+      </div>
       <Viewer
-        className="people-viewer"
-        toView={[
-          { value: 'Client', key: 'client' },
-          { value: 'Matter', key: 'matter' },
-          { value: 'Description', key: 'description' },
-          { value: 'Type', key: 'type' },
-          { value: 'Time', key: 'time' },
-        ]}
+        className={viewerClass}
+        toView={toView}
         data={isLoading ? [] : response.data.people}
-        widths={[13, 13, 48, 13, 13]}
+        widths={widths}
       />
     </>
   );

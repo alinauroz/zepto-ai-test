@@ -1,3 +1,7 @@
+.people-viewer {
+    margin-top: 20px;
+}
+
 .people-viewer td, .people-viewer th {
     text-align: center;
     text-transform: capitalize;
@@ -13,4 +17,13 @@
 
 .people-viewer td:nth-child(3), .people-viewer th:nth-child(3) {
     text-align: left;
+}
+
+.app-container {
+    padding: 0% 2.5%;
+}
+
+.app-heading {
+    margin: 5px;
+    color: var(--light-grey);
 }

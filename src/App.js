@@ -6,7 +6,8 @@ import Activity from './components/screens/Activity/Activity';
 
 function App() {
   return (
-    <div style={{ width: '95%', marginLeft: '2.5%' }}>
+    <div className="app-container">
+      <h1 className="app-heading">Activity</h1>
       <Activity />
     </div>
   );

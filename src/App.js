@@ -3,13 +3,21 @@ import './res/colors.css';
 import './App.css';
 import Viewer from './components/Viewer/Viewer';
 import useRequest from './hooks/useRequest';
+import Button from './components/Button/Button';
 
 function App() {
   const { isLoading, response } = useRequest({ route: 'test/people', query: { period: 'day' } });
 
   return (
     <div style={{ width: '95%', marginLeft: '2.5%' }}>
-      Zepto Ai Test
+      <h2>Zepto Ai Test</h2>
+      <Button
+        value="Today"
+        selected
+      />
+      <Button
+        value="This Week"
+      />
       <br />
       <br />
       <Viewer

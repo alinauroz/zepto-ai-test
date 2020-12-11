@@ -33,12 +33,13 @@ function Button({
   style,
   disabled,
   className,
+  selected,
 }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`button ${className}`}
+      className={`button ${className + (selected ? 'selected' : '')}`}
       style={style}
       disabled={disabled}
       data-testid="app-button"
@@ -54,6 +55,7 @@ Button.propTypes = {
   style: PropTypes.objectOf(PropTypes.any),
   disabled: PropTypes.bool,
   value: PropTypes.string,
+  selected: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -62,6 +64,7 @@ Button.defaultProps = {
   style: {},
   disabled: false,
   value: '',
+  selected: false,
 };
 
 export default Button;

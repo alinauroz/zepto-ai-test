@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Zepto AI Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This web app fetches data from an api using [axios](https://www.npmjs.com/package/axios). Before the data is loaded, a loading animation appears on acitivity screen. Once the response from the api is received, the data is rendered. In case of any error, an error message is displayed.
+
+## Try it Yourself
+
+Either clone the app or download the master branch. You can clone using the following command.
+
+`git clone https://github.com/alinauroz/zepto-ai-test.git`
+
+After this go to the _zepto-ai-test_ directory and install dependencies using `npm i`. Once depencies are installed, you can start the web app using `npm run start` or `yarn start`.
 
 ## Available Scripts
 
-In the project directory, you can run:
+You can use _yarn_ as well as _npm_. Below scripts assumes you are using _yarn_. If you are usinh _npm_, replace _yarn_ with _npm run_.
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app in development mode. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Open [http://localhost:3000](http://localhost:3000) to view in the browser.
 
 ### `yarn test`
+Launches the test runner in the interactive watch mode.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `yarn docs`
+Generates the documentation of the app using [JSDoc](https://www.npmjs.com/package/jsdoc). The documentation is available in _docs_ directory.
 
-### `yarn build`
+### `yarn lint`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Identify and report the problematic patterns. This will help to keep consistency in the code.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `yarn lint:fix`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Some problematic patterns are fixable automatically. This script will fix those problems.
 
-### `yarn eject`
+## Directory Overview
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### docs
+contains the documentation
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### src/components
+contains the app components. Every directory inside this directory contains a jsx file and a css file. Most of them also have test files. Components can be tested using `yarn test`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### src/hooks
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+contains custom hook. So far, there is only one hook, _useRequest_. This hook uses _axios_ to send http/https requests. One of the benefits of using hook is below.
 
-## Learn More
+```
+// without hooks
+const [isLoading, setIsLoading] = useState(true);
+const [error, setError] = useState('');
+const [response, setResponse] = useState(null);
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+useEffect(() => {
+  // code to fetch data and update state
+});
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+// with hooks
+const { isLoading, error, response } = useRequest({ route: 'test/people', query: { period: 'day' } });
 
-### Code Splitting
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### src/res
+contains files to store texts, colors, api data etc which will be used in the project.
 
-### Analyzing the Bundle Size
+### src/utils
+contains only one function, toQueryStr, so far. 
+_toQueryStr_
+Using JSON instead of query string in the code decreases chances of an error. This functions takes an object and returns query string.
+```
+toQueryStr({
+    period: 'day',
+    limit: 10,
+    offset: 100
+});
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+// ?period=day&limit=10&offset=100
+```
 
-### Making a Progressive Web App
+## Produce an Error
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+There many ways to create an error. The easiest way is to change the api address in _res/api.js_.

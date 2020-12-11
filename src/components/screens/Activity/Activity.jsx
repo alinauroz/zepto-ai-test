@@ -18,10 +18,12 @@ function Activity() {
       <Button
         value="Day"
         onClick={() => setPeriod(periods.day)}
+        selected={periods.day === period}
       />
       <Button
         value="This Week"
         onClick={() => setPeriod(periods.week)}
+        selected={periods.week === period}
       />
       <Viewer
         className="people-viewer"

@@ -36,7 +36,7 @@ const useRequest = ({
     };
 
     fetchData();
-  }, [method, route, data, config, toggleVar]);
+  }, [method, route, data, config, toggleVar, JSON.stringify(query)]);
 
   return {
     response, error, isLoading,

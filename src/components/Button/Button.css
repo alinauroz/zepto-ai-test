@@ -5,6 +5,7 @@
     color: var(--text-grey);
     border-radius: 5px;
     box-shadow:  0px 0px 7px 2px var(--light-grey);
+    background-color: var(--white);
     font-size: 16px;
     cursor: pointer;
     margin: 5px;

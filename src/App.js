@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from './components/Loading/Loading';
 import './res/colors.css';
 import './App.css';
 
@@ -8,6 +9,7 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-heading">Activity</h1>
+      <Loading />
       <Activity />
     </div>
   );
